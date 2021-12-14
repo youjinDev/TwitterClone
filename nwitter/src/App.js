@@ -1,9 +1,14 @@
+import AppRouter from "./components/Router";
 import firebase from "./firebase";
 
 function App() {
   console.log(firebase);
 
-  return <div>Test</div>;
+  return (
+    <>
+      <AppRouter />
+    </>
+  );
 }
 
 export default App;
