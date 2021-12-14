@@ -7,7 +7,7 @@ import EditProfile from "../routes/EditProfile";
 import Auth from "../routes/Auth";
 
 export default function AppRouter() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <Router>
