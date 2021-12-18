@@ -8,6 +8,7 @@ import Auth from "routes/Auth";
 
 import { getAuth } from "firebase/auth";
 
+<<<<<<< HEAD
 export default function AppRouter() {
   const [isLoggedIn, setIsLoggedIn] = useState(getAuth().currentUser); //null이 들어옴
 
@@ -16,6 +17,9 @@ export default function AppRouter() {
     setIsLoggedIn(currentUser);
   }, []);
 
+=======
+export default function AppRouter({ isLoggedIn }) {
+>>>>>>> b535168443932d6b3c0849278dba32654e9ef234
   return (
     <Router>
       <Routes>
