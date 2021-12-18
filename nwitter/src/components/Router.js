@@ -1,13 +1,20 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import Home from "../routes/Home";
-import Profile from "../routes/Profile";
-import EditProfile from "../routes/EditProfile";
-import Auth from "../routes/Auth";
+import Home from "routes/Home";
+import Profile from "routes/Profile";
+import EditProfile from "routes/EditProfile";
+import Auth from "routes/Auth";
+
+import { getAuth } from "firebase/auth";
 
 export default function AppRouter() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(getAuth().currentUser); //null이 들어옴
+
+  useEffect(() => {
+    const { currentUser } = getAuth();
+    setIsLoggedIn(currentUser);
+  }, []);
 
   return (
     <Router>
